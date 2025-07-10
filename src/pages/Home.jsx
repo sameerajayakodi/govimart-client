@@ -1,10 +1,10 @@
-import Navbar from "../components/Navbar";
+import MainBanner from "../components/MainBanner";
 
 const Home = () => {
   return (
-    <>
-      <Navbar />
-    </>
+    <div className="mt-10">
+      <MainBanner />
+    </div>
   );
 };
 
