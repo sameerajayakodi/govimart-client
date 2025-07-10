@@ -14,30 +14,32 @@ const MainBanner = () => {
         alt="banner"
         className="w-full md:hidden"
       />
-      <div className="absolute inset-0 flex flex-col items-center md:items-start justify-end md:justify-center pb-24 md:pb-0 px-4 md:pl-18 lg:pl-24">
-        <h1 className="text-3xl md:text:4xl lg:text-5xl font-bold text-center md:text-left mx-w-72 md:max-w-80 lg:max-w-105 leading-tight lg:leading-15">
-          Freshness You Can Trust , Savings You will Love!
+      <div className="absolute inset-0 flex flex-col items-center md:items-start justify-end md:justify-center px-4 pb-24 md:pb-0 md:pl-20 lg:pl-32 text-gray-900">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center md:text-left max-w-[90%] md:max-w-xl lg:max-w-4xl tracking-tight">
+          Your Trusted Online Farmers’ Market <br className="hidden md:block" />
+          <span> Rooted in Nature, Driven by Purpose.</span>
         </h1>
 
-        <div className="flex items-center mt-6 font-medium">
+        <div className="flex items-center mt-6 font-medium space-x-4">
           <Link
             to={"/products"}
-            className="group flex items-center gap-2 md:px-9 py-3 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer"
+            className="group flex items-center gap-2 px-2 md:px-9 py-3 bg-primary hover:bg-primary-dull transition rounded text-white cursor-pointer"
           >
             Shop Now
             <img
-              className="md:hidden transition group-focus:translate-x-1"
+              className="md:hidden transition-transform group-focus:translate-x-1"
               src={assets.white_arrow_icon}
               alt="arrow"
             />
           </Link>
+
           <Link
             to={"/products"}
             className="group hidden md:flex items-center gap-2 px-9 py-3 cursor-pointer"
           >
             Explore deals
             <img
-              className="transition group-hover:translate-x-1"
+              className="transition-transform group-hover:translate-x-1"
               src={assets.black_arrow_icon}
               alt="arrow"
             />
