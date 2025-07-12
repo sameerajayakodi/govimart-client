@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import Login from "../components/Login";
 import Navbar from "../components/Navbar";
 import { useAppContext } from "../context/AppContext";
+import AllProducts from "../pages/AllProducts";
 import Home from "../pages/Home";
 import "./App.css";
 
@@ -19,6 +20,7 @@ function App() {
       <div className={`${isSellerPath} ? "": ""`}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/products" element={<AllProducts />} />
         </Routes>
       </div>
     </div>
