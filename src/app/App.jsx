@@ -1,14 +1,18 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import Login from "../components/Login";
 import Navbar from "../components/Navbar";
+import { useAppContext } from "../context/AppContext";
 import Home from "../pages/Home";
 import "./App.css";
 
 function App() {
   const isSellerPath = useLocation().pathname.includes("seller");
+  const { showUserLogin } = useAppContext();
   return (
     <div>
       {isSellerPath ? null : <Navbar />}
+      {showUserLogin && <Login />}
 
       <ToastContainer />
 
