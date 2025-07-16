@@ -10,7 +10,7 @@ const Categories = () => {
         {categories.map((category, index) => (
           <div
             onClick={() => {
-              navigate(`/products/${category.path.toLowerCase}`);
+              navigate(`/products/${category.path.toLowerCase()}`);
               scrollTo(0, 0);
             }}
             style={{ backgroundColor: category.bgColor }}

@@ -10,7 +10,7 @@ const ProductCard = ({ product }) => {
     product && (
       <div className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden min-w-56 max-w-56 w-full">
         {/* Image Container */}
-        <div className="relative cursor-pointer bg-gray-50 px-4 py-6 flex items-center justify-center">
+        <div className="relative cursor-pointer bg-primary/5 px-4 py-6 flex items-center justify-center">
           <img
             className="group-hover:scale-105 transition-transform duration-300 max-w-26 md:max-w-36 object-contain"
             src={product.image[0]}

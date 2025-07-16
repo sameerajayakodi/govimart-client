@@ -15,7 +15,7 @@ const MainBanner = () => {
         className="w-full md:hidden"
       />
       <div className="absolute inset-0 flex flex-col items-center md:items-start justify-end md:justify-center px-4 pb-24 md:pb-0 md:pl-20 lg:pl-32 text-gray-900">
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight text-center md:text-left max-w-[90%] md:max-w-xl lg:max-w-4xl tracking-tight">
+        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight text-center md:text-left max-w-[90%] md:max-w-xl lg:max-w-4xl tracking-tight">
           Your Trusted Online Farmers’ Market <br className="hidden md:block" />
           <span> Rooted in Nature, Driven by Purpose.</span>
         </h1>
