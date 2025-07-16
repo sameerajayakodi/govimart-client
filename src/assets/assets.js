@@ -16,7 +16,7 @@ import brown_bread_image from "./brown_bread_image.png";
 import brown_rice_image from "./brown_rice_image.png";
 import butter_croissant_image from "./butter_croissant_image.png";
 import carrot_image from "./carrot_image.png";
-import cart_icon from "./cart_icon.svg";
+import cart_icon from "./cart.png";
 import cheese_image from "./cheese_image.png";
 import chocolate_cake_image from "./chocolate_cake_image.png";
 import coca_cola_image from "./coca_cola_image.png";
