@@ -131,11 +131,20 @@ const ProductDetails = () => {
       {relatedProducts.length > 0 && (
         <div className="mt-16">
           <h2 className="text-xl font-semibold mb-4">Related Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4">
             {relatedProducts.map((item, i) => (
               <ProductCard key={i} product={item} />
             ))}
           </div>
+          <button
+            onClick={() => {
+              navigate("/products");
+              scrollTo(0, 0);
+            }}
+            className="mx-auto flex items-center cursor-pointer px-12 my-16 py-2.5 border rouded text-primary hover:bg-primary/10 transition"
+          >
+            See more
+          </button>
         </div>
       )}
     </div>
