@@ -6,6 +6,7 @@ import { useAppContext } from "../context/AppContext";
 import AllProducts from "../pages/AllProducts";
 import Home from "../pages/Home";
 import ProductCategory from "../pages/ProductCategory";
+import ProductDetails from "../pages/ProductDetails";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:category" element={<ProductCategory />} />
+          <Route path="/products/:category/:id" element={<ProductDetails />} />
         </Routes>
       </div>
     </div>
