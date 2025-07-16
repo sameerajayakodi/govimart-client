@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import { useAppContext } from "../context/AppContext";
 import AllProducts from "../pages/AllProducts";
 import Home from "../pages/Home";
+import ProductCategory from "../pages/ProductCategory";
 import "./App.css";
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/products" element={<AllProducts />} />
+          <Route path="/products/:category" element={<ProductCategory />} />
         </Routes>
       </div>
     </div>

@@ -2,6 +2,7 @@ import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 
 const ProductCard = ({ product }) => {
+  // eslint-disable-next-line no-unused-vars
   const { currency, addToCart, removeFromCart, cartItems, navigate } =
     useAppContext();
 
