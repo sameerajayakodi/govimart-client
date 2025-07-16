@@ -63,14 +63,16 @@ const ProductCard = ({ product }) => {
             <div className="flex flex-col">
               <div className="flex items-baseline gap-2">
                 <span className="text-lg font-bold text-gray-900">
-                  {currency}${product.offerPrice}
+                  {currency}
+                  {product.offerPrice}
                 </span>
                 <span className="text-sm text-gray-500 line-through">
-                  {currency}${product.price}
+                  {currency}
+                  {product.price}
                 </span>
               </div>
               <div className="text-xs text-green-600 font-medium">
-                Save {currency}$
+                Save {currency}
                 {(product.price - product.offerPrice).toFixed(2)}
               </div>
             </div>

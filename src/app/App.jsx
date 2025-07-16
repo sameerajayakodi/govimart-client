@@ -4,6 +4,7 @@ import Login from "../components/Login";
 import Navbar from "../components/Navbar";
 import { useAppContext } from "../context/AppContext";
 import AllProducts from "../pages/AllProducts";
+import Cart from "../pages/Cart";
 import Home from "../pages/Home";
 import ProductCategory from "../pages/ProductCategory";
 import ProductDetails from "../pages/ProductDetails";
@@ -17,7 +18,17 @@ function App() {
       {isSellerPath ? null : <Navbar />}
       {showUserLogin && <Login />}
 
-      <ToastContainer />
+      <ToastContainer
+        closeButton="false"
+        theme="colored"
+        position="top-center"
+        autoClose={1000}
+        hideProgressBar={true}
+        newestOnTop={true}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
 
       <div className={`${isSellerPath} ? "": ""`}>
         <Routes>
@@ -25,6 +36,7 @@ function App() {
           <Route path="/products" element={<AllProducts />} />
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/products/:category/:id" element={<ProductDetails />} />
+          <Route path="/cart" element={<Cart />} />
         </Routes>
       </div>
     </div>
