@@ -3,6 +3,7 @@ import { ToastContainer } from "react-toastify";
 import Login from "../components/Login";
 import Navbar from "../components/Navbar";
 import { useAppContext } from "../context/AppContext";
+import AddAddress from "../pages/AddAddress";
 import AllProducts from "../pages/AllProducts";
 import Cart from "../pages/Cart";
 import Home from "../pages/Home";
@@ -37,6 +38,7 @@ function App() {
           <Route path="/products/:category" element={<ProductCategory />} />
           <Route path="/products/:category/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
+          <Route path="/add-address" element={<AddAddress />} />
         </Routes>
       </div>
     </div>
