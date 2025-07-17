@@ -7,6 +7,7 @@ import AddAddress from "../pages/AddAddress";
 import AllProducts from "../pages/AllProducts";
 import Cart from "../pages/Cart";
 import Home from "../pages/Home";
+import MyOrders from "../pages/MyOrders";
 import ProductCategory from "../pages/ProductCategory";
 import ProductDetails from "../pages/ProductDetails";
 import "./App.css";
@@ -39,6 +40,7 @@ function App() {
           <Route path="/products/:category/:id" element={<ProductDetails />} />
           <Route path="/cart" element={<Cart />} />
           <Route path="/add-address" element={<AddAddress />} />
+          <Route path="/my-orders" element={<MyOrders />} />
         </Routes>
       </div>
     </div>
