@@ -13,9 +13,8 @@ const Categories = () => {
               navigate(`/products/${category.path.toLowerCase()}`);
               scrollTo(0, 0);
             }}
-            style={{ backgroundColor: category.bgColor }}
             key={index}
-            className="group curser-pointer py-5 px-3 gap-2 rounded-lg flex flex-col justify-center items-center"
+            className="group curser-pointer py-5 px-3 gap-2 rounded-full flex flex-col justify-center items-center"
           >
             <img
               src={category.image}

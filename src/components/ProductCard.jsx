@@ -15,7 +15,7 @@ const ProductCard = ({ product }) => {
           );
           scrollTo(0, 0);
         }}
-        className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden min-w-56 max-w-56 w-full"
+        className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden min-w-56 max-w-64 w-full"
       >
         {/* Image Container */}
         <div className="relative cursor-pointer bg-primary/5 px-4 py-6 flex items-center justify-center">
