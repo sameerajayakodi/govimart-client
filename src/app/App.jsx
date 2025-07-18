@@ -2,6 +2,9 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
 import Login from "../components/Login";
 import Navbar from "../components/Navbar";
+import AddProduct from "../components/seller/AddProduct";
+import Orders from "../components/seller/Orders";
+import ProductList from "../components/seller/ProductList";
 import SellerLogin from "../components/seller/SellerLogin";
 import { useAppContext } from "../context/AppContext";
 import AddAddress from "../pages/AddAddress";
@@ -46,8 +49,12 @@ function App() {
           <Route
             path="/seller"
             element={isSeller ? <SellerLayout /> : <SellerLogin />}
-          />
-          <Route />
+          >
+            {/* Nested inside SellerLayout */}
+            <Route index element={<AddProduct />} />
+            <Route path="product-list" element={<ProductList />} />
+            <Route path="orders" element={<Orders />} />
+          </Route>
         </Routes>
       </div>
     </div>
