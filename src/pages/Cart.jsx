@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from "react";
 import { assets, dummyAddress } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";

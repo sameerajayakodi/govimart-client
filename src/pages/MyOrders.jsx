@@ -39,6 +39,7 @@ const MyOrders = () => {
                 order.items.length !== index + 1 && "border-b"
               } border-gray-300 flex flex-col md:flex-row md:items-center justify-between p-4 py-5 md:gap-16 w-full max-w-4xl`}
             >
+                
               <div className="flex items-center mb-4 md:mb-0">
                 <div className="bg-primary/10 p-4 rounded-lg">
                   <img
