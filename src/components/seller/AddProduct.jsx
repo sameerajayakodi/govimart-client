@@ -1,5 +1,7 @@
 import { useState } from "react";
+import { toast } from "react-toastify";
 import { assets, categories } from "../../assets/assets";
+import { useAppContext } from "../../context/AppContext";
 
 const AddProduct = () => {
   const [files, setFiles] = useState([]);
@@ -8,18 +10,42 @@ const AddProduct = () => {
   const [category, setCategory] = useState("");
   const [price, setPrice] = useState("");
   const [offerPrice, setOfferPrice] = useState("");
+  const { axios } = useAppContext();
+  const [loading, setLoading] = useState(false);
+  const onSubmitHandler = async (e) => {
+    e.preventDefault();
+    setLoading(true); // Start loading
+    try {
+      const productData = {
+        name,
+        description: description.split("\n"),
+        category,
+        price,
+        offerPrice,
+      };
 
-  const onSubmitHandler = (event) => {
-    event.preventDefault();
-    // Handle form submission logic here
-    console.log({
-      files,
-      name,
-      description,
-      category,
-      price,
-      offerPrice,
-    });
+      const formData = new FormData();
+      formData.append("productData", JSON.stringify(productData));
+      for (let i = 0; i < files.length; i++) {
+        formData.append("images", files[i]);
+      }
+
+      const { data } = await axios.post("/api/product/add", formData);
+      if (data.success) {
+        toast.success(data.message);
+        setName("");
+        setDescription("");
+        setCategory("");
+        setPrice("");
+        setOfferPrice("");
+        setFiles([]);
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
+    setLoading(false); // End loading
   };
   return (
     <div className=" no-scrollbar flex-1 overflow-y-scroll flex flex-col h-[95vh]">
@@ -134,8 +160,39 @@ const AddProduct = () => {
             />
           </div>
         </div>
-        <button className="px-8 py-2.5 bg-primary text-white font-medium rounded cursor-pointer">
-          Add Product
+        <button
+          className={`px-8 py-2.5 bg-primary text-white font-medium rounded cursor-pointer flex items-center justify-center gap-2 ${
+            loading ? "opacity-70 cursor-not-allowed" : ""
+          }`}
+          disabled={loading}
+        >
+          {loading ? (
+            <>
+              <svg
+                className="animate-spin h-5 w-5 text-white"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+              >
+                <circle
+                  className="opacity-25"
+                  cx="12"
+                  cy="12"
+                  r="10"
+                  stroke="currentColor"
+                  strokeWidth="4"
+                ></circle>
+                <path
+                  className="opacity-75"
+                  fill="currentColor"
+                  d="M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 100 16v-4l-3 3 3 3v-4a8 8 0 01-8-8z"
+                ></path>
+              </svg>
+              Adding...
+            </>
+          ) : (
+            "Add Product"
+          )}
         </button>
       </form>
     </div>

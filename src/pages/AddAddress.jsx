@@ -1,5 +1,7 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import { assets } from "../assets/assets";
+import { useAppContext } from "../context/AppContext";
 
 /* eslint-disable no-unused-vars */
 const InputField = ({ type, placeholder, name, handleChange, address }) => (
@@ -15,6 +17,7 @@ const InputField = ({ type, placeholder, name, handleChange, address }) => (
 );
 
 const AddAddress = () => {
+  const { axios, user, navigate } = useAppContext();
   const [address, setAddress] = useState({
     firstName: "",
     lastName: "",
@@ -22,7 +25,7 @@ const AddAddress = () => {
     street: "",
     city: "",
     state: "",
-    zipCode: "",
+    zipcode: "",
     country: "",
     phone: "",
   });
@@ -37,7 +40,24 @@ const AddAddress = () => {
   const onSubmitHandler = async (e) => {
     //prevent page refresh
     e.preventDefault();
+    try {
+      const { data } = await axios.post("/api/address/add", address);
+      if (data.success) {
+        toast.success(data.message);
+        navigate("/cart");
+      } else {
+        toast.error(data.message);
+      }
+    } catch (error) {
+      toast.error(error.message);
+    }
   };
+
+  useEffect(() => {
+    if (!user) {
+      navigate("/cart");
+    }
+  });
   return (
     <div className="mt-16 pb-16 w-full max-w-7xl mx-auto px-4">
       <p className="text-2xl md:text-3xl text-gray-500">
