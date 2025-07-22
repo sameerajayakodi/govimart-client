@@ -125,7 +125,7 @@ export const AppContextProvider = ({ children }) => {
     fetchSeller();
     fetchProducts();
     console.log(currency);
-  }, []);
+  }, [user]);
 
   //update database cart items
   useEffect(() => {

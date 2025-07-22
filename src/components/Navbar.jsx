@@ -15,6 +15,8 @@ const Navbar = () => {
     setSearchQuery,
     getCartCount,
     axios,
+    // Add these if they exist in your context
+    // clearCart, setCartItems, or whatever method you use to manage cart
   } = useAppContext();
 
   const logout = async () => {
@@ -24,6 +26,9 @@ const Navbar = () => {
         toast.success(data.message);
         setUser(null);
         navigate("/");
+
+        // Refresh the navbar/page after logout
+        window.location.reload();
       } else {
         toast.error(data.message);
       }
@@ -37,6 +42,7 @@ const Navbar = () => {
       navigate("/products");
     }
   }, [searchQuery]);
+
   return (
     <div>
       <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
