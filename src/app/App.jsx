@@ -1,5 +1,6 @@
 import { Route, Routes, useLocation } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import Loading from "../components/Loading";
 import Login from "../components/Login";
 import Navbar from "../components/Navbar";
 import AddProduct from "../components/seller/AddProduct";
@@ -46,6 +47,7 @@ function App() {
           <Route path="/cart" element={<Cart />} />
           <Route path="/add-address" element={<AddAddress />} />
           <Route path="/my-orders" element={<MyOrders />} />
+          <Route path="/loader" element={<Loading />} />
           <Route
             path="/seller"
             element={isSeller ? <SellerLayout /> : <SellerLogin />}
