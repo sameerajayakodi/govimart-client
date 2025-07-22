@@ -2,7 +2,6 @@ import { assets } from "../assets/assets";
 import { useAppContext } from "../context/AppContext";
 
 const ProductCard = ({ product }) => {
-  // eslint-disable-next-line no-unused-vars
   const { currency, addToCart, removeFromCart, cartItems, navigate } =
     useAppContext();
 
@@ -15,28 +14,27 @@ const ProductCard = ({ product }) => {
           );
           scrollTo(0, 0);
         }}
-        className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden min-w-56 max-w-64 w-full"
+        className="group bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 overflow-hidden min-w-72 max-w-80 w-full min-h-[400px] flex flex-col"
       >
         {/* Image Container */}
-        <div className="relative cursor-pointer bg-primary/5 px-4 py-6 flex items-center justify-center">
+        <div className="relative cursor-pointer bg-primary/5 px-4 py-6 flex items-center justify-center h-40">
           <img
-            className="group-hover:scale-105 transition-transform duration-300 max-w-26 md:max-w-36 object-contain"
+            className="group-hover:scale-105 transition-transform duration-300 max-w-32 md:max-w-40 object-contain max-h-32"
             src={product.image[0]}
             alt={product.name}
           />
-          {/* Hover overlay effect */}
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/5 transition-colors duration-300 rounded-t-xl"></div>
         </div>
 
         {/* Content Container */}
-        <div className="p-4 space-y-3">
+        <div className="p-4 space-y-3 flex flex-col flex-grow">
           {/* Category */}
           <div className="text-xs font-medium text-gray-500 uppercase tracking-wide">
             {product.category}
           </div>
 
           {/* Product Name */}
-          <h3 className="text-gray-900 font-semibold text-base leading-tight line-clamp-2 min-h-[2.5rem]">
+          <h3 className="text-gray-900 font-semibold text-base leading-tight line-clamp-2 min-h-[2.5rem] flex-grow-0">
             {product.name}
           </h3>
 
@@ -58,7 +56,7 @@ const ProductCard = ({ product }) => {
           </div>
 
           {/* Price and Cart Section */}
-          <div className="flex items-center justify-between pt-2">
+          <div className="flex items-center justify-between pt-2 mt-auto">
             {/* Price */}
             <div className="flex flex-col">
               <div className="flex items-baseline gap-2">
@@ -89,7 +87,7 @@ const ProductCard = ({ product }) => {
                   className="flex items-center justify-center gap-1.5 bg-primary hover:bg-primary/90 text-white font-medium px-3 py-2 rounded-lg transition-colors duration-200 text-sm shadow-sm hover:shadow-md"
                   onClick={() => addToCart(product._id)}
                 >
-                  <img className="w-4 h-4 " src={assets.cart_icon} alt="cart" />
+                  <img className="w-4 h-4" src={assets.cart_icon} alt="cart" />
                   Add
                 </button>
               ) : (
