@@ -131,7 +131,7 @@ const ProductDetails = () => {
       {relatedProducts.length > 0 && (
         <div className="mt-16">
           <h2 className="text-xl font-semibold mb-4">Related Products</h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 lg:grid-cols-5 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-6 w-full max-w-7xl justify-items-center auto-rows-fr">
             {relatedProducts.map((item, i) => (
               <ProductCard key={i} product={item} />
             ))}
