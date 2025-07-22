@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { toast } from "react-toastify";
 import { useAppContext } from "../context/AppContext";
 import { assets } from "./../assets/assets";
@@ -46,10 +46,13 @@ const Navbar = () => {
   return (
     <div>
       <nav className="flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 border-b border-gray-300 bg-white relative transition-all">
-        <NavLink to="/" onClick={() => setOpen(false)}>
-          <p className="text-2xl font-medium">GOViMART</p>
-        </NavLink>
-
+        <Link to={"/"}>
+          <img
+            src={assets.logo}
+            alt="logo"
+            className="cursor-pointer w-34 md:w-38"
+          />
+        </Link>
         <div className="hidden sm:flex items-center gap-8">
           <NavLink to="/">Home</NavLink>
           <NavLink to="/products">All Products</NavLink>
